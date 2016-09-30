@@ -1,25 +1,23 @@
 import fetch from 'isomorphic-fetch';
+import { delay } from 'utils';
 
 const fetchHeroes = () => fetch('/assets/data/heroes.json').then(response => response.json());
 
 export const getHeroes = () => (dispatch) => {
-  fetchHeroes()
-    .then(json => dispatch({
-      type: 'HEROES_REQUEST_SUCCEEDED',
-      payload: {
-        data: json,
-      },
-    }));
-};
+  dispatch({
+    type: 'HEROES_REQUEST_STARTED',
+  });
 
-export const getDashboardHeroes = () => (dispatch) => {
-  fetchHeroes()
-    .then(json => dispatch({
-      type: 'DASHBOARD_HEROES_REQUEST_SUCCEEDED',
-      payload: {
-        data: json.slice(1, 5),
-      },
-    }));
+  delay(2000) // simulate long request to demonstrate loading
+    .then(() =>
+      fetchHeroes()
+        .then(json => dispatch({
+          type: 'HEROES_REQUEST_SUCCEEDED',
+          payload: {
+            data: json,
+          },
+        }))
+  );
 };
 
 export const selectHero = hero => ({

@@ -11,11 +11,6 @@ const HeroDetailContainer = Vue.extend({
       heroId: Number(this.$route.params.id),
     };
   },
-  created: function created() {
-    if (!this.heroes || this.heroes.length === 0) {
-      store.dispatch(actions.getHeroes()); // ideally we'd make this call at app startup or something like that
-    }
-  },
   methods: {
     onSaveClick: function onSaveClick(hero) {
       store.dispatch(actions.updateHero(hero));

@@ -1,6 +1,4 @@
 import Vue from 'vue';
-import store from 'boot/store';
-import * as actions from '../actions';
 import Dashboard from './dashboard';
 
 const DashboardContainer = Vue.extend({
@@ -9,11 +7,6 @@ const DashboardContainer = Vue.extend({
     return {
       heroes: this.$select('app.heroes as heroes'),
     };
-  },
-  created: function created() {
-    if (!this.heroes || this.heroes.length === 0) {
-      store.dispatch(actions.getHeroes()); // ideally we'd make this call at app startup or something like that
-    }
   },
   render: function render(h) {
     return (

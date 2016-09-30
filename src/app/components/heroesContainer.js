@@ -11,11 +11,6 @@ const HeroesContainer = Vue.extend({
       selectedHero: this.$select('app.selectedHero as selectedHero'),
     };
   },
-  created: function created() { // lifecycle function
-    if (!this.heroes || this.heroes.length === 0) {
-      store.dispatch(actions.getHeroes());  // ideally we'd make this call at app startup or something like that
-    }
-  },
   methods: {
     onHeroClick: function onHeroClick(hero) {
       store.dispatch(actions.selectHero(hero));

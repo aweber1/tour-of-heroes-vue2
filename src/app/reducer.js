@@ -1,12 +1,16 @@
 const initialState = {
   heroes: [],
   selectedHero: null,
+  loading: false,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case 'HEROES_REQUEST_STARTED': {
+      return { ...state, loading: true };
+    }
     case 'HEROES_REQUEST_SUCCEEDED': {
-      return { ...state, heroes: action.payload.data };
+      return { ...state, heroes: action.payload.data, loading: false };
     }
     case 'HERO_SELECTED': {
       return { ...state, selectedHero: action.payload.data };

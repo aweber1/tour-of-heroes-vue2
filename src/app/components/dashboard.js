@@ -16,7 +16,7 @@ const Dashboard = Vue.extend({
   render: function render(h) {
     return (
       <div class="dashboard">
-        <h3>Top Heroes</h3>
+        <h2>Top Heroes</h2>
         <div class="grid grid-pad">
           {
             this.heroes ?

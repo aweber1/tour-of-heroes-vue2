@@ -45,3 +45,9 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+.heroes-container .heroes .delete {
+  float: right;
+  margin-right: 8px;
+  margin-top: 2px;
+}
