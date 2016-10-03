@@ -5,7 +5,6 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 
 import makeRootReducer from './reducer';
-// import * as actions from './actions/todos';
 
 const debug = process.env.NODE_ENV !== 'production';
 const middlewares = [thunk];

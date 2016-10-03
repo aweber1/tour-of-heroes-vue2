@@ -1,4 +1,4 @@
-import { Vue, router, store } from './boot/core';
+import { Vue, router } from './boot/core';
 import App from './app/components/app';
 
 new Vue({
@@ -9,5 +9,4 @@ new Vue({
       <App title="Tour of Heroes" />
     );
   },
-  data: { store },
 });
