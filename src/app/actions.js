@@ -8,7 +8,7 @@ export const getHeroes = () => (dispatch) => {
     type: 'HEROES_REQUEST_STARTED',
   });
 
-  delay(2000) // simulate long request to demonstrate loading
+  delay(1000) // simulate delayed request to demonstrate loading
     .then(() =>
       fetchHeroes()
         .then(json => dispatch({
